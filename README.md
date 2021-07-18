@@ -1,4 +1,4 @@
-Xamarin.Android.OpenCV v3.1.0
+Xamarin.Android.OpenCV v4.5.3
 ========================
 
 ## C# bindings for the OpenCV Android SDK ##
