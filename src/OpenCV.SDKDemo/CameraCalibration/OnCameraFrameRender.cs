@@ -52,8 +52,8 @@ namespace OpenCV.SDKDemo.CameraCalibration
         public override Mat Render(CameraBridgeViewBase.ICvCameraViewFrame inputFrame)
         {
             Mat renderedFrame = new Mat(inputFrame.Rgba().Size(), inputFrame.Rgba().Type());
-            Imgproc.Undistort(inputFrame.Rgba(), renderedFrame,
-                    mCalibrator.getCameraMatrix(), mCalibrator.getDistortionCoefficients());
+            //Imgproc.Undistort(inputFrame.Rgba(), renderedFrame,
+            //        mCalibrator.getCameraMatrix(), mCalibrator.getDistortionCoefficients());
 
             return renderedFrame;
         }
@@ -75,8 +75,8 @@ namespace OpenCV.SDKDemo.CameraCalibration
         public override Mat Render(CameraBridgeViewBase.ICvCameraViewFrame inputFrame)
         {
             Mat undistortedFrame = new Mat(inputFrame.Rgba().Size(), inputFrame.Rgba().Type());
-            Imgproc.Undistort(inputFrame.Rgba(), undistortedFrame,
-                    mCalibrator.getCameraMatrix(), mCalibrator.getDistortionCoefficients());
+            //Imgproc.Undistort(inputFrame.Rgba(), undistortedFrame,
+            //        mCalibrator.getCameraMatrix(), mCalibrator.getDistortionCoefficients());
 
             Mat comparisonFrame = inputFrame.Rgba();
             undistortedFrame.ColRange(new Range(0, mWidth / 2)).CopyTo(comparisonFrame.ColRange(new Range(mWidth / 2, mWidth)));
@@ -87,9 +87,9 @@ namespace OpenCV.SDKDemo.CameraCalibration
             Imgproc.FillPoly(comparisonFrame, border, new Scalar(255, 255, 255));
 
             Imgproc.PutText(comparisonFrame, mResources.GetString(Resource.String.original), new Point(mWidth * 0.1, mHeight * 0.1),
-                    Core.Core.FontHersheySimplex, 1.0, new Scalar(255, 255, 0));
+                    1, 1.0, new Scalar(255, 255, 0));
             Imgproc.PutText(comparisonFrame, mResources.GetString(Resource.String.undistorted), new Point(mWidth * 0.6, mHeight * 0.1),
-                    Core.Core.FontHersheySimplex, 1.0, new Scalar(255, 255, 0));
+                    1, 1.0, new Scalar(255, 255, 0));
 
             return comparisonFrame;
         }

@@ -150,7 +150,7 @@ namespace OpenCV.SDKDemo.CameraCalibration
             drawPoints(rgbaFrame);
 
             Imgproc.PutText(rgbaFrame, "Captured: " + mCornersBuffer.Count, new Point(rgbaFrame.Cols() / 3 * 2, rgbaFrame.Rows() * 0.1),
-                    Core.Core.FontHersheySimplex, 1.0, new Scalar(255, 255, 0));
+                    1, 1.0, new Scalar(255, 255, 0));
         }
 
         public Mat getCameraMatrix()
