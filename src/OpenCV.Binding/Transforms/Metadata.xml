@@ -23,6 +23,8 @@
     </method>
   </add-node>
 
+  <remove-node path="/api/package[@name='org.opencv.android']/class[@name='JavaCameraView']/field[@name='mCameraFrame']"></remove-node>
+
   <attr path="/api/package[@name='org.opencv.android']/class[@name='CameraBridgeViewBase']/method[@name='setCvCameraViewListener' and count(parameter)=1 and parameter[1][@type='org.opencv.android.CameraBridgeViewBase.CvCameraViewListener']]" name="managedName">SetCvCameraViewListener</attr>
   <attr path="/api/package[@name='org.opencv.android']/class[@name='CameraBridgeViewBase']/method[@name='setCvCameraViewListener' and count(parameter)=1 and parameter[1][@type='org.opencv.android.CameraBridgeViewBase.CvCameraViewListener2']]" name="managedName">SetCvCameraViewListener2</attr>
 
